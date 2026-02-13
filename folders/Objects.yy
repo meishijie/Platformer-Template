@@ -1,0 +1,16 @@
+{
+  "$GMFolder":"",
+  "%Name":"Objects",
+  "children":[
+    {"folderPath":"folders/Objects/Characters.yy","name":"Characters","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"folderPath":"folders/Objects/Environment.yy","name":"Environment","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"folderPath":"folders/Objects/HUD.yy","name":"HUD","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"folderPath":"folders/Objects/Managers.yy","name":"Managers","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"folderPath":"folders/Objects/UI.yy","name":"UI","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"folderPath":"folders/Objects/VFX.yy","name":"VFX","resourceType":"GMFolder","resourceVersion":"2.0",},
+  ],
+  "folderPath":"folders/Objects.yy",
+  "name":"Objects",
+  "resourceType":"GMFolder",
+  "resourceVersion":"2.0",
+}
