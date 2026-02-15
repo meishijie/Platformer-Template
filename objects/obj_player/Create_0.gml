@@ -7,6 +7,11 @@ coins = 0;
 // This variable tells whether the player is currently in knockback (from being hit by an enemy). It will be true if it is, and false if not.
 in_knockback = false;
 
+// Invincibility star power-up variables
+invincible_star = false;
+invincible_star_timer = 0;
+rainbow_hue = 0;
+
 // This is the object that replaces the player once it is defeated.
 defeated_object = obj_player_defeated;
 

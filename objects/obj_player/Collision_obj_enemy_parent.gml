@@ -1,6 +1,15 @@
 // This event runs when the player collides with an enemy.
 // It checks if the player has fallen on top of the enemy, in which case the enemy is defeated. Otherwise, the player
 // gets hurt.
+
+// Check if player has invincibility star power-up - enemy dies instantly
+if (invincible_star)
+{
+    other.hp = 0;
+    audio_play_sound(snd_enemy_hit, 0, 0);
+    exit;
+}
+
 // This condition checks if the player's vertical velocity is greater than 0, meaning it's falling down.
 if (vel_y > 0)
 {
