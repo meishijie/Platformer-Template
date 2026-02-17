@@ -135,6 +135,39 @@ audio_sound_pitch(_sound, random_range(0.8, 1));
 | KeyPress | 9 |
 | KeyRelease | 10 |
 
+## 房间中添加实例
+
+在房间的 `.yy` 文件中添加对象实例需要修改**两个位置**：
+
+### 1. 在 instanceCreationOrder 数组中添加
+
+在房间文件根部的 `instanceCreationOrder` 数组末尾添加实例引用：
+
+```json
+{"name":"inst_NEWINSTANCE","path":"rooms/rm_level_1/rm_level_1.yy",},
+```
+
+### 2. 在 Instances 图层中添加实例
+
+在 `layers` 数组中找到 `name":"Instances"` 的图层，在 `instances` 数组中添加：
+
+```json
+{"$GMRInstance":"v4","%Name":"inst_NEWINSTANCE","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_NEWINSTANCE","objectId":{"name":"obj_enemy_mushroom","path":"objects/obj_enemy_mushroom/obj_enemy_mushroom.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1700.0,"y":1500.0,},
+```
+
+**关键字段说明：**
+- `name`: 实例唯一名称（必须与 instanceCreationOrder 中一致）
+- `objectId`: 指定的对象路径
+- `x`, `y`: 实例在房间中的坐标
+- `scaleX`, `scaleY`: 缩放比例
+- `imageIndex`, `imageSpeed`: 精灵动画设置
+
+### 注意事项
+
+- 必须同时修改 `instanceCreationOrder` 和 `instances` 两处
+- 实例名称必须唯一
+- 添加后需在 GMS2 中刷新房间（Room → Refresh）或重新打开项目
+
 ## 参考文档
 
 - [文件格式参考](references/file-format.md)
