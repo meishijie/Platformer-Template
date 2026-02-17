@@ -36,17 +36,28 @@ if (no_hurt_frames > 0)
 	// to be hurt.
 	no_hurt_frames -= 1;
 
-	// This part handles making the character flash on and off when it's invincible, by changing its alpha between 0 and 1.
-	// If the remainder of no_hurt_frames divided by 12 is above 6, we'll set the alpha to 0.
-	// Otherwise we'll set it to 1.
-	if (no_hurt_frames % 12 > 6)
+	// Check if this is the player with invincibility star power-up
+	var _has_star = false;
+	if (variable_instance_exists(id, "invincible_star"))
 	{
-		// This makes the character invisible.
-		image_alpha = 0;
+		_has_star = invincible_star;
 	}
-	else
+	
+	// Only apply flashing effect if not in star power-up mode
+	if (!_has_star)
 	{
-		// This makes the character visible again.
-		image_alpha = 1;
+		// This part handles making the character flash on and off when it's invincible, by changing its alpha between 0 and 1.
+		// If the remainder of no_hurt_frames divided by 12 is above 6, we'll set the alpha to 0.
+		// Otherwise we'll set it to 1.
+		if (no_hurt_frames % 12 > 6)
+		{
+			// This makes the character invisible.
+			image_alpha = 0;
+		}
+		else
+		{
+			// This makes the character visible again.
+			image_alpha = 1;
+		}
 	}
 }
