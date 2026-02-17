@@ -128,6 +128,28 @@ defeated_object = obj_enemy_new_defeated;
 {"id":{"name":"obj_enemy_new_defeated","path":"objects/obj_enemy_new_defeated/obj_enemy_new_defeated.yy",},}
 ```
 
+## 步骤 6: 在房间中添加敌人实例
+
+在房间的 `.yy` 文件中添加实例需要修改**两处**：
+
+### 6.1 在 instanceCreationOrder 数组中添加
+
+```json
+{"name":"inst_NEWENEMY","path":"rooms/rm_level_1/rm_level_1.yy",},
+```
+
+### 6.2 在 Instances 图层中添加
+
+在 `layers` 数组中找到 `name":"Instances"` 的图层：
+
+```json
+{"$GMRInstance":"v4","%Name":"inst_NEWENEMY","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_NEWENEMY","objectId":{"name":"obj_enemy_new","path":"objects/obj_enemy_new/obj_enemy_new.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1700.0,"y":1500.0,},
+```
+
+**重要提示：**
+- 必须同时修改 `instanceCreationOrder` 和 `instances` 两处
+- 添加后需在 GMS2 中刷新房间（Room → Refresh）
+
 ## 敌人属性参考
 
 来自 `obj_enemy_parent`:
