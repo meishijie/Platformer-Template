@@ -3,6 +3,9 @@ event_inherited();
 // This is the object that replaces the enemy once it is defeated.
 defeated_object = obj_enemy2_defeated;
 
+// Set enemy name (displayed above head)
+enemy_name = "Fast Slime";
+
 // This sets the movement speed for this particular enemy (faster than enemy1).
 move_speed = 4;
 
